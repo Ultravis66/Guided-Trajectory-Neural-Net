@@ -59,7 +59,7 @@ Example inference script for fast evaluation
 Visualization tools for training curves and trajectory comparison
 This project demonstrates how classic flight-dynamics simulation can be fused with deep learning to create a high-speed surrogate suitable for research, guidance development, and rapid design iteration.
 
-1. Training Curve — Loss vs Epochs
+1. Training Curve Loss vs Epochs
 
 File: Training.png
 This plot shows the full training and validation loss history over 100 epochs.
