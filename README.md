@@ -35,7 +35,6 @@ The training pipeline includes mixed precision (AMP), teacher forcing, a Reduce-
 - max_trajectory_error: 2.9245 m
 - mean_final_position_error: 0.4159 m
 - std_final_position_error: 0.2601 m
-- std_final_position_error: 0.2601 m
 - median_final_position_error: 0.3590 m
 - 95th_percentile_error: 0.9205 m
 
