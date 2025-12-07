@@ -4,7 +4,7 @@ This project builds a machine-learning surrogate model using data generated from
 This repository builds directly on the physics engine from my companion project Trajectory-Monte-Carlo:
 https://github.com/Ultravis66/Trajectory-Monte-Carlo
 
-In that project, a quasi-6-DoF GnC model was created to simulate thousands of trajectories under randomized target and wind conditions. This repository extends that work into the machine-learning domain by generating a large fixed-size dataset and training a neural network surrogate that can emulate projectile flight with orders-of-magnitude speedup.
+In that project, a quasi-6-DoF GnC model was created to simulate thousands of trajectories under randomized target and wind conditions. This repository extends that work into the machine-learning domain by generating a large fixed-size dataset and training a neural network surrogate that can emulate flight with orders-of-magnitude speedup.
 
 1. Physics-Based Dataset Generation (100,000 Trajectories)
 
