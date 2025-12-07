@@ -45,7 +45,7 @@ The training pipeline includes mixed precision (AMP), teacher forcing, a Reduce-
 - Speedup: 431x faster!
 - Speedup: 431x faster!
 
-The surrogate model runs on GPU at 12,923 trajectories/sec (in my case a 4070 ti Super), compared to ~30/sec for the physics integrator — delivering a 431× speedup. This enables:
+The surrogate model runs on GPU at 12,923 trajectories/sec (in my case a 4070 ti Super), compared to ~30/sec for the physics integrator delivering a 431× speedup. This enables:
 
 Real-time Monte Carlo studies
 Rapid guidance law evaluation
