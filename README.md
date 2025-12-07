@@ -41,10 +41,7 @@ The training pipeline includes mixed precision (AMP), teacher forcing, a Reduce-
 
 4. Performance
 - Neural network: 12,923 trajectories/sec
-- Neural network: 12,923 trajectories/sec
 - Physics sim: ~30 trajectories/sec
-- Physics sim: ~30 trajectories/sec
-- Speedup: 431x faster!
 - Speedup: 431x faster!
 
 The surrogate model runs on GPU at 12,923 trajectories/sec (in my case a 4070 ti Super), compared to ~30/sec for the physics integrator delivering a 431× speedup. This enables:
