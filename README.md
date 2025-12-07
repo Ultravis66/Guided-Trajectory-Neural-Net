@@ -63,7 +63,7 @@ This project demonstrates how classic flight-dynamics simulation can be fused wi
 
 File: Training.png
 This plot shows the full training and validation loss history over 100 epochs.
-You can clearly see the LSTM decoder learning the underlying projectile dynamics and steadily reducing prediction error.
+You can clearly see the LSTM decoder learning the underlying dynamics and steadily reducing prediction error.
 
 <p align="center"> <img src="Training.png" width="600"> </p>
 2. Ground Truth vs Surrogate (3D Overlay)
