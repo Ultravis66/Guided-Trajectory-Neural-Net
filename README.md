@@ -1,10 +1,10 @@
 # Guided-Trajectory-Neural-Net
-This project builds a machine-learning surrogate model using data generated from a quasi-6-DoF physics simulator replacing numerical integration with a neural network that can predict full 3-D projectile trajectories—including altitude, downrange motion, and lateral deflection hundreds of times faster while maintaining meter-level accuracy.
+This project builds a machine-learning surrogate model using data generated from a quasi-6-DoF physics simulator replacing numerical integration with a neural network that can predict full 3-D trajectories—including altitude, downrange motion, and lateral deflection hundreds of times faster while maintaining meter-level accuracy.
 
-This repository builds directly on the physics engine from my companion project Trajectory-Monte-Carlo
+This repository builds directly on the physics engine from my companion project Trajectory-Monte-Carlo:
 https://github.com/Ultravis66/Trajectory-Monte-Carlo
 
-In that project, a quasi-6-DoF guided projectile model was created to simulate thousands of trajectories under randomized target and wind conditions. This repository extends that work into the machine-learning domain by generating a large fixed-size dataset and training a neural network surrogate that can emulate projectile flight with orders-of-magnitude speedup.
+In that project, a quasi-6-DoF GnC model was created to simulate thousands of trajectories under randomized target and wind conditions. This repository extends that work into the machine-learning domain by generating a large fixed-size dataset and training a neural network surrogate that can emulate projectile flight with orders-of-magnitude speedup.
 
 1. Physics-Based Dataset Generation (100,000 Trajectories)
 
@@ -28,13 +28,22 @@ LSTM Decoder: Autoregressively predicts the projectile’s 3D path (x, y, z) ove
 
 The training pipeline includes mixed precision (AMP), teacher forcing, a Reduce-LROn-Plateau scheduler, and validation monitoring. After 100 epochs:
 
-Median final-position error: 0.36 m
+3. Neural Network Surrogate Model (PyTorch)
+- mean_trajectory_error: 0.2518 m
+- max_trajectory_error: 2.9245 m
+- mean_final_position_error: 0.4159 m
+- std_final_position_error: 0.2601 m
+- std_final_position_error: 0.2601 m
+- median_final_position_error: 0.3590 m
+- 95th_percentile_error: 0.9205 m
 
-95th percentile error: < 1 m
-
-Mean trajectory error: 0.25 m
-
-3. Performance
+4. Performance
+- Neural network: 12,923 trajectories/sec
+- Neural network: 12,923 trajectories/sec
+- Physics sim: ~30 trajectories/sec
+- Physics sim: ~30 trajectories/sec
+- Speedup: 431x faster!
+- Speedup: 431x faster!
 
 The surrogate model runs on GPU at 12,923 trajectories/sec, compared to ~30/sec for the physics integrator — delivering a 431× speedup. This enables:
 
@@ -60,26 +69,3 @@ Visualization tools for training curves and trajectory comparison
 
 This project demonstrates how classic flight-dynamics simulation can be fused with deep learning to create a high-speed surrogate suitable for research, guidance development, and rapid design iteration.
 
-
-
-
-
-============================================================
-FINAL METRICS
-============================================================
-  mean_trajectory_error: 0.2518 m
-  max_trajectory_error: 2.9245 m
-  mean_final_position_error: 0.4159 m
-  std_final_position_error: 0.2601 m
-  std_final_position_error: 0.2601 m
-  median_final_position_error: 0.3590 m
-  95th_percentile_error: 0.9205 m
-
-
-  Neural network: 12,923 trajectories/sec
-  Neural network: 12,923 trajectories/sec
-  Physics sim: ~30 trajectories/sec
-  Physics sim: ~30 trajectories/sec
-  Speedup: 431x faster!
-  Speedup: 431x faster!
-  
